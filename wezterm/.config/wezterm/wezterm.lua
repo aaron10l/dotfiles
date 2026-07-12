@@ -26,8 +26,17 @@ config.window_frame.font_size = 13.0
 config.native_macos_fullscreen_mode = true
 
 -- keys
-local maximize_window = wezterm.action_callback(function(window, _pane)
-	window:maximize()
+local maximized_windows = {}
+
+local toggle_maximize_window = wezterm.action_callback(function(window, _pane)
+	local window_id = window:window_id()
+	if maximized_windows[window_id] then
+		window:restore()
+		maximized_windows[window_id] = nil
+	else
+		window:maximize()
+		maximized_windows[window_id] = true
+	end
 end)
 
 -- smart pane navigation:
@@ -108,12 +117,12 @@ config.keys = {
 	{
 		key = "m",
 		mods = "LEADER",
-		action = maximize_window,
+		action = toggle_maximize_window,
 	},
 	{
 		key = "f",
 		mods = "CMD",
-		action = wezterm.action.ToggleFullScreen,
+		action = toggle_maximize_window,
 	},
 	{
 		key = "f",

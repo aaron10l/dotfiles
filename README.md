@@ -49,6 +49,9 @@ Leader is `Ctrl+Space`.
 | `Leader Shift h/j/k/l` | Resize pane (repeatable) |
 | `Ctrl h/j/k/l` | Navigate panes (works with nvim splits) |
 | `Leader 1-5` | Switch tab |
+| `Leader m` | Toggle maximize (fills screen, not native fullscreen) |
+| `Cmd f` | Toggle maximize (fills screen, not native fullscreen) |
+| `Ctrl Cmd f` | Native macOS fullscreen |
 | `Leader s` | Fuzzy workspace switcher |
 | `Leader n` | New workspace |
 | `Cmd Shift R` | Reload WezTerm config |
