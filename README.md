@@ -8,6 +8,7 @@ Personal terminal and editor setup for macOS.
 
 - **WezTerm** — `wezterm/.config/wezterm/wezterm.lua`
 - **Neovim** — `nvim/.config/nvim/` (Kickstart-based, Lazy.nvim)
+- **Rectangle** — installed via Homebrew (default app settings)
 
 ## Prerequisites
 
@@ -15,7 +16,7 @@ Install these before running the install script:
 
 ```bash
 brew install wezterm neovim
-brew install --cask font-hack-nerd-font
+brew install --cask font-hack-nerd-font rectangle
 ```
 
 Optional (recommended for cleaner installs):
@@ -61,6 +62,12 @@ Leader is `Ctrl+Space`.
 Config lives in `init.lua` with custom plugins under `lua/custom/plugins/`.
 
 `lazy-lock.json` is tracked so plugin versions stay in sync across machines.
+
+## Rectangle
+
+The install script installs Rectangle if it is missing. Default shortcuts and settings are used — no config is tracked in this repo.
+
+After install, open Rectangle once and grant **Accessibility** permission when macOS prompts you.
 
 ## Updating
 

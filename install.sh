@@ -35,6 +35,21 @@ install_with_stow() {
 	echo "Stowed $package"
 }
 
+install_rectangle() {
+	if [[ -d "/Applications/Rectangle.app" ]]; then
+		return
+	fi
+
+	echo "Installing Rectangle..."
+
+	if command -v brew >/dev/null 2>&1; then
+		brew install --cask rectangle
+		echo "Open Rectangle and grant Accessibility access when macOS prompts you."
+	else
+		echo "Install Rectangle manually: brew install --cask rectangle"
+	fi
+}
+
 main() {
 	echo "Installing dotfiles from $DOTFILES_DIR"
 
@@ -49,6 +64,8 @@ main() {
 			link_package "$package"
 		done
 	fi
+
+	install_rectangle
 
 	echo
 	echo "Done. Open a new WezTerm window and run nvim to verify."
