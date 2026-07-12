@@ -2,6 +2,8 @@
 
 Personal terminal and editor setup for macOS.
 
+[github.com/aaron10l/dotfiles](https://github.com/aaron10l/dotfiles)
+
 ## What's included
 
 - **WezTerm** — `wezterm/.config/wezterm/wezterm.lua`
@@ -25,7 +27,7 @@ brew install stow
 ## Install on a new machine
 
 ```bash
-git clone <your-repo-url> ~/dotfiles
+git clone https://github.com/aaron10l/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
 ./install.sh
